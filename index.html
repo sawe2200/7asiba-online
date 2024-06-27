@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albion Online Refining Profit Calculator</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1><span class="material-icons">calculate</span> Albion Online Refining Profit Calculator</h1>
+        <div class="form-group">
+            <label for="itemSelect"><span class="material-icons">inventory</span> Select Item:</label>
+            <select id="itemSelect">
+                <option value="" disabled selected>Select an item</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="itemValue"><span class="material-icons">attach_money</span> Item Value:</label>
+            <input type="number" id="itemValue" placeholder="Enter item value" readonly>
+        </div>
+        <div class="form-group">
+            <label for="productPrice"><span class="material-icons">price_check</span> Product Price:</label>
+            <input type="number" id="productPrice" placeholder="Enter product price">
+        </div>
+        <div class="form-group">
+            <label for="resourcesCosts"><span class="material-icons">construction</span> Resources Costs:</label>
+            <input type="number" id="resourcesCosts" placeholder="Enter resources costs">
+        </div>
+        <div class="form-group">
+            <label for="returnRate"><span class="material-icons">replay</span> Return Rate (%):</label>
+            <input type="number" id="returnRate" placeholder="Enter return rate percentage">
+        </div>
+        <div class="form-group">
+            <label for="craftAmount"><span class="material-icons">production_quantity_limits</span> Craft Amount:</label>
+            <input type="number" id="craftAmount" placeholder="Enter craft amount">
+        </div>
+        <button id="calculateButton"><span class="material-icons">calculate</span> Calculate</button>
+        <div id="results">
+            <p>Fee: <span id="fee"></span></p>
+            <p>Profit: <span id="profit"></span></p>
+            <p>Profit Percentage: <span id="profitPercentage"></span></p>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
