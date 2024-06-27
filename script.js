@@ -1,37 +1,83 @@
-$(document).ready(function() {
-    // Mock data for items, should replace with actual API call
-    const items = [
-        { id: 'T4_ORE', name: 'Tier 4 Ore', value: 120 },
-        { id: 'T5_ORE', name: 'Tier 5 Ore', value: 240 },
-        { id: 'T6_ORE', name: 'Tier 6 Ore', value: 360 },
-        { id: 'T7_ORE', name: 'Tier 7 Ore', value: 480 },
-        { id: 'T8_ORE', name: 'Tier 8 Ore', value: 600 }
-    ];
+body {
+    font-family: Arial, sans-serif;
+    background: url('https://i.imgur.com/6JYxW5F.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
 
-    const itemSelect = $('#itemSelect');
-    items.forEach(item => {
-        itemSelect.append(new Option(item.name, item.id));
-    });
+.container {
+    width: 500px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
 
-    itemSelect.change(function() {
-        const selectedItem = $(this).val();
-        const selectedItemData = items.find(item => item.id === selectedItem);
-        $('#itemValue').val(selectedItemData.value);
-    });
+h1 {
+    text-align: center;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    $('#calculateButton').click(function() {
-        const itemValue = parseFloat($('#itemValue').val());
-        const productPrice = parseFloat($('#productPrice').val());
-        const resourcesCosts = parseFloat($('#resourcesCosts').val());
-        const returnRate = parseFloat($('#returnRate').val());
-        const craftAmount = parseFloat($('#craftAmount').val());
+h1 .material-icons {
+    margin-right: 10px;
+}
 
-        const fee = itemValue * 0.1125;
-        const profit = (productPrice - resourcesCosts + (resourcesCosts / 100 * returnRate) - fee) * craftAmount;
-        const profitPercentage = ((profit / (resourcesCosts * craftAmount)) * 100).toFixed(2);
+.form-group {
+    margin-bottom: 15px;
+}
 
-        $('#fee').text(fee.toFixed(2));
-        $('#profit').text(profit.toFixed(2));
-        $('#profitPercentage').text(profitPercentage + '%');
-    });
-});
+label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+label .material-icons {
+    margin-right: 10px;
+}
+
+input, select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button .material-icons {
+    margin-right: 10px;
+}
+
+button:hover {
+    background: #218838;
+}
+
+#results {
+    margin-top: 20px;
+}
+
+#results p {
+    font-size: 18px;
+    color: #333;
+}
