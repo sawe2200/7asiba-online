@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background: url('https://i.imgur.com/6JYxW5F.jpg') no-repeat center center fixed; 
     background-size: cover;
     margin: 0;
@@ -9,7 +9,7 @@ body {
 .container {
     width: 500px;
     margin: 50px auto;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     padding: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     border-radius: 8px;
@@ -42,7 +42,7 @@ label .material-icons {
     margin-right: 10px;
 }
 
-input, select {
+input {
     width: calc(100% - 22px);
     padding: 10px;
     font-size: 16px;
